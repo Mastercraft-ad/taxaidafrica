@@ -1,7 +1,7 @@
-# Tax Aid Africa - Website with Stripe Donations
+# Tax Aid Africa - Website with Paystack Donations
 
 ## Overview
-A website for Tax Aid Africa, a non-profit organization dedicated to tax education and support in Africa. The site features volunteer signup, tax education resources, SME support services, request forms, a tax calculator tool, and an "Adopt A Tax Payer" donation system powered by Stripe.
+A website for Tax Aid Africa, a non-profit organization dedicated to tax education and support in Africa. The site features volunteer signup, tax education resources, SME support services, request forms, a tax calculator tool, and an "Adopt A Tax Payer" donation system powered by Paystack.
 
 ## Project Structure
 ```
@@ -39,11 +39,10 @@ The application runs using Node.js/Express server on port 5000 with Stripe integ
 node server/index.js
 ```
 
-## Stripe Integration
-- **Stripe Checkout**: Secure payment processing via Stripe Checkout sessions
-- **Donation Flow**: Users select a taxpayer → choose amount → redirect to Stripe → return on success/cancel
-- **Dynamic Pricing**: Uses price_data for flexible donation amounts ($25, $50, $100, or custom)
-- **Webhook**: Configured for payment events (optional setup)
+## Paystack Integration
+- **Paystack Checkout**: Secure payment processing via Paystack transaction initialization
+- **Donation Flow**: Users select a taxpayer → choose amount (₦5,000, ₦10,000, ₦25,000) → redirect to Paystack → return on success
+- **Environment Variables Required**: PAYSTACK_SECRET_KEY, PAYSTACK_PUBLIC_KEY
 
 ## Form Handling
 Forms are processed entirely client-side with JavaScript:
