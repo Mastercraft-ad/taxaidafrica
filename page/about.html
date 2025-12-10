@@ -133,7 +133,11 @@
     <main class="pt-16 sm:pt-18 lg:pt-20">
         
         <!-- Hero Section -->
-        <section class="relative py-20 lg:py-28 bg-gradient-to-br from-primary via-primary to-primary-dark overflow-hidden">
+        <section class="relative py-20 lg:py-28 overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('../assets/images/about-bg.jpg');"></div>
+            <!-- Color Overlay to maintain green theme -->
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-primary-dark/90"></div>
             <div class="absolute inset-0 opacity-20" style="background-size: 60px 60px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);"></div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">About Us</h1>
