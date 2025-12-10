@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Tax Aid Africa</title>
+    <meta name="description" content="Support Tax Aid Africa with your donation. Help us make tax easier for individuals and small businesses across Nigeria.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#208D71',
+                        'primary-dark': '#1a7259',
+                        secondary: '#F2BC1C',
+                        'secondary-dark': '#d9a617',
+                        accent: '#E64249',
+                        'accent-dark': '#c93238',
+                        light: '#f4f7f6',
+                        dark: '#333333',
+                        muted: '#555555',
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        hand: ['Architects Daughter', 'cursive'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .backdrop-blur-custom { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
+        .animate-delay-100 { animation-delay: 100ms; }
+        .animate-delay-200 { animation-delay: 200ms; }
+        .animate-delay-300 { animation-delay: 300ms; }
+        .donation-option {
+            transition: all 0.3s ease;
+        }
+        .donation-option:hover {
+            border-color: #208D71;
+        }
+        .donation-option.selected {
+            border-color: #E64249;
+            background-color: #fef2f2;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-light font-sans text-dark antialiased">
+    
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-custom border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-18 lg:h-20">
+                
+                <a href="../index.html" class="flex-shrink-0 relative">
+                    <img src="../assets/images/logo.png" alt="TaxAid Africa" class="h-8 sm:h-10 lg:h-12 w-auto transition-all duration-200">
+                    <span class="absolute top-1/2 -translate-y-1/2 -right-8 sm:-right-10 lg:-right-12 text-sm sm:text-base lg:text-lg font-hand text-secondary transition-all duration-200">Africa</span>
+                </a>
+                
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="../index.html#info" class="text-sm font-semibold text-muted hover:text-primary transition-colors">Tax Information</a>
+                    <div class="relative group">
+                        <button type="button" aria-haspopup="true" aria-expanded="false" class="text-sm font-semibold text-muted hover:text-primary transition-colors flex items-center gap-1 focus:outline-none focus:text-primary">
+                            Support our work
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200" role="menu">
+                            <ul class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[220px]">
+                                <li><a href="../index.html#donate" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Make a donation</a></li>
+                                <li><a href="../index.html#corporate" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Corporate partnerships</a></li>
+                                <li><a href="../index.html#gift" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Leave a gift in your will</a></li>
+                                <li><a href="../index.html#events" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Fundraising and Events</a></li>
+                                <li><a href="../index.html#volunteer" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Volunteer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-sm font-semibold text-muted hover:text-primary transition-colors">About Us</a>
+                    <a href="contact.html" class="text-sm font-semibold text-muted hover:text-primary transition-colors">Contact</a>
+                </nav>
+                
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="../index.html#donate" class="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-0.5">Donate</a>
+                    <a href="../index.html#login" class="px-5 py-2.5 bg-accent hover:bg-accent-dark text-white text-sm font-bold rounded-full shadow-lg shadow-accent/20 hover:shadow-xl transition-all hover:-translate-y-0.5">Member Login</a>
+                </div>
+                
+                <div class="flex lg:hidden items-center gap-2">
+                    <a href="../index.html#donate" class="hidden sm:inline-flex px-4 py-2 bg-primary text-white text-sm font-bold rounded-full">Donate</a>
+                    <button class="p-2 text-dark hover:bg-gray-100 rounded-lg transition-colors" id="mobile-menu-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="hidden fixed inset-0 bg-white z-[100] overflow-y-auto" id="mobile-menu">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <div class="relative">
+                    <img src="../assets/images/logo.png" alt="TaxAid Africa" class="h-10 w-auto">
+                    <span class="absolute top-1/2 -translate-y-1/2 -right-10 text-base font-hand text-secondary">Africa</span>
+                </div>
+                <button class="p-2 hover:bg-gray-100 rounded-lg" id="mobile-menu-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </button>
+            </div>
+            <div class="space-y-3 mb-8">
+                <a href="../index.html#donate" class="block w-full py-3 bg-primary text-white text-center font-bold rounded-xl">Donate</a>
+                <a href="../index.html#login" class="block w-full py-3 bg-accent text-white text-center font-bold rounded-xl">Member Login</a>
+            </div>
+            <div class="space-y-1">
+                <a href="../index.html" class="block py-4 text-lg font-medium border-b border-gray-100">Home</a>
+                <a href="../index.html#info" class="block py-4 text-lg font-medium border-b border-gray-100">Tax Information</a>
+                <div class="border-b border-gray-100">
+                    <button type="button" id="mobile-support-toggle" class="w-full flex items-center justify-between py-4 text-lg font-medium text-left" aria-expanded="false" aria-controls="mobile-support-submenu">
+                        Support our work
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" id="mobile-support-arrow"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div id="mobile-support-submenu" class="hidden pb-3 pl-4">
+                        <a href="../index.html#donate" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Make a donation</a>
+                        <a href="../index.html#corporate" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Corporate partnerships</a>
+                        <a href="../index.html#gift" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Leave a gift in your will</a>
+                        <a href="../index.html#events" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Fundraising and Events</a>
+                        <a href="../index.html#volunteer" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Volunteer</a>
+                    </div>
+                </div>
+                <a href="about.html" class="block py-4 text-lg font-medium border-b border-gray-100">About Us</a>
+                <a href="contact.html" class="block py-4 text-lg font-medium border-b border-gray-100">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+    <main class="pt-16 sm:pt-18 lg:pt-20">
+        
+        <!-- Donate Hero Section -->
+        <section class="relative min-h-[calc(100vh-80px)] flex items-center bg-primary overflow-hidden">
+            <div class="absolute inset-0 opacity-30" style="background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);"></div>
+            
+            <div class="absolute right-0 top-0 bottom-0 w-1/3 hidden lg:block">
+                <img src="../assets/images/hero-worker.jpg" alt="People we help" class="w-full h-full object-cover opacity-60">
+            </div>
+            
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                    
+                    <!-- Left Side - Message -->
+                    <div class="text-center lg:text-left animate-fade-in">
+                        <div class="inline-block bg-white/90 backdrop-blur-sm px-8 py-6 rounded-lg shadow-xl">
+                            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark mb-2">It's not a donation.</h1>
+                            <p class="text-3xl sm:text-4xl lg:text-5xl font-hand text-secondary">It's a lifeline.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side - Donation Form -->
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 sm:p-10 animate-fade-in animate-delay-200">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-dark mb-4">Help us to help people in crisis</h2>
+                        <p class="text-muted mb-8 leading-relaxed">
+                            Help us to help people in crisis. We want to create a world where tax is easier for people to face, and no one is left to navigate it alone. Please make a regular or one-off donation today so that we can help those in greatest need and struggling with tax.
+                        </p>
+                        
+                        <form id="donation-form">
+                            <p class="text-dark font-semibold mb-4">How often would you like to donate?</p>
+                            
+                            <div class="space-y-4 mb-8">
+                                <label class="donation-option block border-2 border-gray-200 rounded-lg p-4 cursor-pointer">
+                                    <input type="radio" name="donation-type" value="one-time" class="hidden" checked>
+                                    <span class="text-dark font-medium">Just one donation</span>
+                                </label>
+                                
+                                <label class="donation-option block border-2 border-gray-200 rounded-lg p-4 cursor-pointer">
+                                    <input type="radio" name="donation-type" value="regular" class="hidden">
+                                    <span class="text-dark font-medium">I'd like to give regularly</span>
+                                </label>
+                            </div>
+                            
+                            <!-- Amount Selection (shown after first step) -->
+                            <div id="amount-section" class="hidden mb-8">
+                                <p class="text-dark font-semibold mb-4">Select donation amount</p>
+                                <div class="grid grid-cols-3 gap-3 mb-4">
+                                    <button type="button" class="amount-btn py-3 px-4 border-2 border-gray-200 rounded-lg font-bold text-dark hover:border-primary hover:bg-primary/5 transition-all" data-amount="1000">&#8358;1,000</button>
+                                    <button type="button" class="amount-btn py-3 px-4 border-2 border-gray-200 rounded-lg font-bold text-dark hover:border-primary hover:bg-primary/5 transition-all" data-amount="5000">&#8358;5,000</button>
+                                    <button type="button" class="amount-btn py-3 px-4 border-2 border-gray-200 rounded-lg font-bold text-dark hover:border-primary hover:bg-primary/5 transition-all" data-amount="10000">&#8358;10,000</button>
+                                    <button type="button" class="amount-btn py-3 px-4 border-2 border-gray-200 rounded-lg font-bold text-dark hover:border-primary hover:bg-primary/5 transition-all" data-amount="25000">&#8358;25,000</button>
+                                    <button type="button" class="amount-btn py-3 px-4 border-2 border-gray-200 rounded-lg font-bold text-dark hover:border-primary hover:bg-primary/5 transition-all" data-amount="50000">&#8358;50,000</button>
+                                    <button type="button" class="amount-btn py-3 px-4 border-2 border-gray-200 rounded-lg font-bold text-dark hover:border-primary hover:bg-primary/5 transition-all" data-amount="100000">&#8358;100,000</button>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-muted font-bold">&#8358;</span>
+                                    <input type="number" id="custom-amount" placeholder="Enter custom amount" class="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none">
+                                </div>
+                            </div>
+                            
+                            <!-- Contact Info (shown after amount) -->
+                            <div id="contact-section" class="hidden mb-8">
+                                <p class="text-dark font-semibold mb-4">Your information</p>
+                                <div class="space-y-4">
+                                    <input type="text" id="donor-name" placeholder="Full Name" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none">
+                                    <input type="email" id="donor-email" placeholder="Email Address" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none">
+                                    <input type="tel" id="donor-phone" placeholder="Phone Number" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-end">
+                                <button type="button" id="next-btn" class="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:shadow-xl transition-all">
+                                    Next
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
+                            <div class="flex items-center gap-2 text-sm text-muted">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                <span>Secure donation</span>
+                            </div>
+                            <a href="about.html" class="text-sm text-primary hover:underline">Find out more about Tax Aid Africa</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Donate Section -->
+        <section class="py-16 sm:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-dark mb-4">Why Your Donation Matters</h2>
+                    <p class="text-lg text-muted max-w-2xl mx-auto">Your support helps us provide free tax assistance to those who need it most</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Help More People</h3>
+                        <p class="text-muted">Your donation enables us to reach more individuals and small businesses struggling with tax compliance.</p>
+                    </div>
+                    
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-secondary"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Fund Education</h3>
+                        <p class="text-muted">We create educational resources and workshops to improve tax literacy across Nigeria.</p>
+                    </div>
+                    
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Support Volunteers</h3>
+                        <p class="text-muted">Your contribution helps train and equip our dedicated volunteers to provide quality assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="relative inline-block mb-4">
+                        <img src="../assets/images/logo.png" alt="TaxAid Africa" class="h-10 w-auto brightness-0 invert">
+                        <span class="absolute top-1/2 -translate-y-1/2 -right-10 text-base font-hand text-secondary">Africa</span>
+                    </div>
+                    <p class="text-white/70 text-sm">Making tax easier for everyone in Nigeria.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-white/70 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-white/70 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Get Involved</h4>
+                    <ul class="space-y-2">
+                        <li><a href="donate.html" class="text-white/70 hover:text-white transition-colors">Donate</a></li>
+                        <li><a href="../index.html#volunteer" class="text-white/70 hover:text-white transition-colors">Volunteer</a></li>
+                        <li><a href="../index.html#corporate" class="text-white/70 hover:text-white transition-colors">Partner With Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-white/70">
+                        <li>Lagos, Nigeria</li>
+                        <li>info@taxaidafrica.org</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-white/50 text-sm">
+                <p>&copy; 2024 Tax Aid Africa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function openMobileMenu() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+        document.getElementById('mobile-menu-btn').addEventListener('click', openMobileMenu);
+        document.getElementById('mobile-menu-close').addEventListener('click', closeMobileMenu);
+        
+        // Donation form logic
+        const donationOptions = document.querySelectorAll('.donation-option');
+        const amountSection = document.getElementById('amount-section');
+        const contactSection = document.getElementById('contact-section');
+        const nextBtn = document.getElementById('next-btn');
+        const amountBtns = document.querySelectorAll('.amount-btn');
+        let currentStep = 1;
+        let selectedAmount = 0;
+        
+        // Handle donation type selection
+        donationOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                donationOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+        
+        // Set first option as selected by default
+        donationOptions[0].classList.add('selected');
+        
+        // Handle amount button clicks
+        amountBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                amountBtns.forEach(b => b.classList.remove('border-primary', 'bg-primary/10'));
+                this.classList.add('border-primary', 'bg-primary/10');
+                selectedAmount = this.dataset.amount;
+                document.getElementById('custom-amount').value = '';
+            });
+        });
+        
+        // Handle custom amount
+        document.getElementById('custom-amount').addEventListener('input', function() {
+            if (this.value) {
+                amountBtns.forEach(b => b.classList.remove('border-primary', 'bg-primary/10'));
+                selectedAmount = this.value;
+            }
+        });
+        
+        // Handle next button
+        nextBtn.addEventListener('click', function() {
+            if (currentStep === 1) {
+                amountSection.classList.remove('hidden');
+                currentStep = 2;
+            } else if (currentStep === 2) {
+                if (selectedAmount > 0 || document.getElementById('custom-amount').value) {
+                    contactSection.classList.remove('hidden');
+                    nextBtn.textContent = 'Donate Now';
+                    currentStep = 3;
+                } else {
+                    alert('Please select or enter a donation amount');
+                }
+            } else if (currentStep === 3) {
+                const name = document.getElementById('donor-name').value;
+                const email = document.getElementById('donor-email').value;
+                if (name && email) {
+                    alert('Thank you for your generous donation! We will contact you shortly with payment details.');
+                } else {
+                    alert('Please fill in your name and email');
+                }
+            }
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
