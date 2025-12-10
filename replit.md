@@ -9,9 +9,17 @@ index.html                 - Main HTML page (all sections)
 assets/
   css/style.css           - Main stylesheet (Tailwind-inspired)
   images/                 - Stock images for sections
+page/
+  about.html              - About Us page
+  contact.html            - Contact page
+  donate.html             - Donations page
+  gethelp.html            - Get Help page
+  resources.html          - Resources page
+  services.html           - Services page
+  volunteer-individual.html - Individual volunteer registration form
+  volunteer-firm.html     - Professional firm volunteer registration form
 server/
-  index.js                - Express backend with Stripe integration
-  stripeClient.js         - Stripe client configuration
+  index.js                - Express backend with Paystack integration
 ```
 
 ## Key Features
@@ -21,7 +29,9 @@ server/
   - Corporate path: Industry → Business list with sample data
   - Countries: Nigeria, Ghana, Kenya, South Africa with states/regions
   - Industries: Retail, Agriculture, Manufacturing, Services, Technology
-- **Volunteer Signup**: Modal-based volunteer type selection
+- **Volunteer Signup**: Modal-based volunteer type selection with dedicated registration forms
+  - Individual Volunteer Form: Personal info, professional background, skills, availability
+  - Professional Firm Form: Organization info, services offered, geographic coverage
 - **Support Request Form**: Client-side form handling with JavaScript
 - **Tax Calculator**: PAYE/Income Tax and VAT calculation with JavaScript
 - **Responsive Design**: Mobile-friendly with custom CSS
